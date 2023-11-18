@@ -1,0 +1,3 @@
+The tee command reads its standart input until end-of-file, writing a copy of the 
+input to standart output and to the file named in its command-line argument. 
+Implement tee using I/O system call . By default, tee overwrites any existing file with the given name. Implement the -a command line option (tee -a file), which causes tee to append text to teh end of a file if it already exists.

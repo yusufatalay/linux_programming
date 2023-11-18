@@ -45,6 +45,7 @@ int main(int argc, char *argv[]) {
       errExit("write");
     }
 
+    close(fileD);
     exit(EXIT_SUCCESS);
   }
 
