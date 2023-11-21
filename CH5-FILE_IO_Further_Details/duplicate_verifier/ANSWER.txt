@@ -1,0 +1,12 @@
+This can be proved by simple assertion
+
+```
+	fcntln(fd1, F_GETFD) == fcntln(fd2, F_GETFD)	
+```
+
+As for the offset location
+
+
+```
+	lseek(fd1, 0, SEEK_CUR)	 == lseek(fd2, 0, SEEK_CUR)
+```

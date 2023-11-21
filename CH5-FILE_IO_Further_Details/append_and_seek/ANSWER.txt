@@ -1,0 +1,3 @@
+The data appeared at the end of the file (appended normally), the is because:
+O_APPEND flag FORCES pointer to the end of the file only
+

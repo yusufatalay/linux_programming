@@ -1,0 +1,10 @@
+THIS FILE WILL
+BE 	opened for appending
+
+
+
+
+
+
+END OF TEST FILE
+THIS IS THE TEXT TO APPEND

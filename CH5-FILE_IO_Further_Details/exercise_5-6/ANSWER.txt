@@ -1,0 +1,13 @@
+All the writes happening to the same file
+after the first write the file's content is
+	Hello,
+after second write 
+	Hello, world
+after seek command, file cursor is set to the beginning of the file for both opened versions
+
+after third write
+	HELLO, world
+and after the last one, using the fd3 
+	Gidday, world
+
+Reason for the result is not Hello, Gidday is, fd3 is created with open not dup so the file offset values are not shared

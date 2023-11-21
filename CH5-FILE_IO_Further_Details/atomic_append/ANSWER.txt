@@ -1,0 +1,3 @@
+Here is the result of the run 
+981K  test_with_append
+2,0M  test_without_append
