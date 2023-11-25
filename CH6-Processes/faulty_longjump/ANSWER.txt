@@ -1,0 +1,4 @@
+$ ./faulty_longjump
+In x() setjmp called first time
+In x() longjmp called, control returned here
+fish: Job 1, './faulty_longjump' terminated by signal SIGSEGV (Address boundary error)

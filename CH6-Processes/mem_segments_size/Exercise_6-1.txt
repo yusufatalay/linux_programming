@@ -1,0 +1,3 @@
+Compile the program in Listing 6-1 (mem_segment.c), and list its size using
+ls -lh. Although the program contains an array (mbuf) that is around 10MB
+in size, the executable file is much smaller that this, Why is this?

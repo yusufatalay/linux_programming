@@ -1,0 +1,1 @@
+That 10MB array located at the uninitialized part of the memory, therefore it won't be added to program's size on disk
