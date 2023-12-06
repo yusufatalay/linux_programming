@@ -1,0 +1,2 @@
+The process is not privileged because although it's real id is 0 (root), it's effective id is 1000
+meaning it is less privileged then it originally was

@@ -1,0 +1,3 @@
+Is a process with the following user IDs priviliged? Explain your answer.
+
+real=0	effective=1000	saved=1000	file-system=1000
