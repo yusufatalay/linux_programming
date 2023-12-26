@@ -19,13 +19,14 @@ typedef struct process_node {
   pid_t pid;
   pid_t ppid;
   struct process_node *parent;
-  struct process_node **childs;
+  struct process_node *childs[512];
+  uint child_array_index;
   struct process_node *next; // linked list feature will make it easy to search
                              // through the processes w/o dealing with tree
 } process_node;
 
-process_node *create_and_insert_ll_process_node(const char *name,const pid_t pid,const pid_t ppid);
+process_node *create_and_insert_ll_process_node(const char *name,pid_t pid,pid_t ppid);
 
-process_node *find_node_in_ll(const pid_t pid);
+process_node *find_node_in_ll(pid_t pid);
 
 #endif

@@ -2,6 +2,7 @@
 
 process_node *process_ll_head;  // the latest node
 process_node *process_ll_start; // the first node
+process_node *ghost_process; // top of the process tree (ghost because such process does not exist)
 
 process_node *create_and_insert_process_node_ll(const char *name,
                                                 pid_t pid, pid_t ppid) {
@@ -11,12 +12,11 @@ process_node *create_and_insert_process_node_ll(const char *name,
         perror("malloc");
         exit(EXIT_FAILURE);
     }
-
     strcpy(res->name, name);
     res->pid = pid;
     res->ppid = ppid;
-    res->childs = NULL;
     res->next = NULL;
+    res->child_array_index = 0;
 
     if (process_ll_start == NULL) { // first call
         process_ll_start = res;
@@ -30,7 +30,7 @@ process_node *create_and_insert_process_node_ll(const char *name,
     return res;
 }
 
-process_node *find_node_in_ll(const pid_t pid) {
+process_node *find_node_in_ll(pid_t pid) {
     for (process_node *i = process_ll_start; i != NULL; i = i->next) {
         if (i->pid == pid) {
             return i;
@@ -39,12 +39,81 @@ process_node *find_node_in_ll(const pid_t pid) {
     return NULL;
 }
 
-void free_ll(void) {
+void free_everything(void) {
     process_node *tmp;
     while (process_ll_start != NULL) {
         tmp = process_ll_start;
         process_ll_start = process_ll_start->next;
         free(tmp);
+    }
+
+    free(ghost_process);
+}
+
+void create_tree(void){
+   // initite ghost process
+   // we are doing this because in my system two processes have ppid of 0 (systemd and kthreadd)
+
+
+  ghost_process = (process_node *) malloc(sizeof(process_node));
+    if (ghost_process == NULL) {
+        perror("malloc");
+        exit(EXIT_FAILURE);
+    }
+
+    strcpy(ghost_process->name, "GHOST PROCESS");
+    ghost_process->pid = 0;
+    ghost_process->ppid = 0;
+    ghost_process->parent = NULL;
+    ghost_process->next = NULL;
+    ghost_process->child_array_index = 0;
+
+    process_node  *parent;
+
+    // the process ids' are already sorted increasing.
+    for (process_node *i = process_ll_start; i != NULL; i = i->next) {
+      if (i->ppid == 0)  {
+          i->parent = ghost_process;
+          ghost_process->childs[ghost_process->child_array_index++] = i;
+      }else{
+         parent=  find_node_in_ll(i->ppid);;
+         if(parent == NULL){
+             printf("find_node_in_ll\n");
+             exit(EXIT_FAILURE);
+         }
+
+         parent->childs[parent->child_array_index++] = i;
+         i->parent = parent;
+      }
+    }
+}
+
+void print_tree_recursive(process_node *node, int depth, int isLast) {
+    // Print dashes for the current depth
+    for (int i = 1; i < depth; i++) {
+        printf("%s", isLast ? "    " : "|   "); // Adjust spacing based on depth
+    }
+
+    // Print vertical dash if not the root
+    if (depth > 0) {
+        printf("%s", isLast ? "`-- " : "|-- ");
+    }
+
+    // Print the current node
+    printf("%s(%d)\n", node->name, node->pid);
+
+    // Recursively print child nodes
+    for (uint i = 0; i < node->child_array_index; i++) {
+        print_tree_recursive(node->childs[i], depth + 1, i == node->child_array_index - 1);
+    }
+}
+
+void print_tree(void) {
+    printf("GHOST PROCESS(0)\n");
+
+    // Start printing from the ghost process
+    for (uint i = 0; i < ghost_process->child_array_index; i++) {
+        print_tree_recursive(ghost_process->childs[i], 1, i == ghost_process->child_array_index - 1);
     }
 }
 
@@ -150,8 +219,8 @@ int main(int argc, char *argv[]) {
                         }
                     }
                     // we got all the values we need;
-                    pid_t CmdPID = atoi(CmdPIDValue);
-                    pid_t CmdPPID = atoi(CmdPPIDValue);
+                    pid_t CmdPID = (pid_t)strtol(CmdPIDValue, &endptr, 10);
+                    pid_t CmdPPID = (pid_t)strtol(CmdPPIDValue, &endptr , 10);
                     create_and_insert_process_node_ll(CmdNameValue, CmdPID, CmdPPID);
 
                     free(CmdNameValue);
@@ -166,11 +235,12 @@ int main(int argc, char *argv[]) {
     }
 
     closedir(procDIR);
-    for (process_node *i = process_ll_start; i->next != NULL; i = i->next) {
-        printf("Process Name: %s\nProcesss ID: %d\nProcess Parent ID: %d\n", i->name, i->pid, i->ppid);
-        printf("\t\t\t|\n\t\t\t|\n\t\t\t|\n\t\t\tv\n");
-    }
-    free_ll();
+
+    create_tree();
+
+    print_tree();
+
+    free_everything();
 
     return 0;
 }
