@@ -1,0 +1,25 @@
+I have tried this exercise with test.c program, however both terminal and file contains the same
+data after running the program. I guess this exercise was created with a mistake, printf
+flushes its buffer when it come accross a newline character , so the correct exercise code 
+should be like this
+
+```
+	  printf("If I had mode time, ");
+  	  write(STDOUT_FILENO, "I would have written you a shorter letter.\n", 43);
+```
+
+right now when this program runs with no modification the output is:
+
+	```
+		./a.out                          
+		I would have written you a shorter letter.
+	```
+
+This happened because write does not buffers its content whereas printf does
+
+Now, in code when we redirect STDOUT to a disk file with dup2, here is the content of the file:
+
+	```
+		I would have written you a shorter letter.
+		If I had mode time, If I had mode time,
+	```

@@ -1,0 +1,6 @@
+explain why the output of the following code differs depending on whether standart
+output is redirected to a terminal or to a disk file.
+	
+	printf("If I had more time, \n");
+	write(STDOUT_FILENO, "I would have written you a shorter letter.\n", 43);
+

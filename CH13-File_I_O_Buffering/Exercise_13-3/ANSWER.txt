@@ -1,0 +1,5 @@
+fflush flushes user space buffer of fp to the kernel space 
+
+fsync flushes kernel space buffer of the file stream pointed by fp to the disk 
+
+these two could be used in conjunktion to ensure data written to the disk 

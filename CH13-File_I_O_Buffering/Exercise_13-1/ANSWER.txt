@@ -1,0 +1,53 @@
+Lets create a test file with size of 100 Mb
+	```
+		dd if=/dev/zero of=testfile bs=1024 count=102400
+	```
+And use our program without modifying anything (DEFAULT BUFFER SIZE: 1024)
+
+	```
+		$ time ./copy testfile testfilecopy                              
+
+		________________________________________________________
+		Executed in  636.27 millis    fish           external
+		   usr time  141.95 millis  866.00 micros  141.08 millis
+		   sys time  490.75 millis  592.00 micros  490.16 millis
+
+	```
+
+Now lets change the buffer size by reducing it to its half 
+
+	```
+		clang *.c -o copy -DBUF_SIZE=512	
+
+		$ time ./copy testfile testfilecopy   
+
+		________________________________________________________
+		Executed in    1.23 secs      fish           external
+		   usr time  257.61 millis    0.04 millis  257.58 millis
+		   sys time  965.29 millis    1.02 millis  964.27 millis
+	```
+
+Now lets increase the buffer size by doubling it.
+
+	```
+		clang *.c -o copy -DBUF_SIZE=2048
+
+		$ time ./copy testfile testfilecopy
+		
+		________________________________________________________
+		Executed in  480.14 millis    fish           external
+		   usr time   59.95 millis    0.00 millis   59.95 millis
+		   sys time  391.11 millis    1.27 millis  389.84 millis
+	```
+
+I've tried to run the program with buffer size of 1, however it seems like program is taking >%12 of my CPU so I did not wait for it to end.
+
+For the next part lets enable O_SYNC flag and run the program with same configurations above
+
+
+Again when running program with this modification, it takes alot of CPU usage, and after waiting 
+for a bit the program still did not finished  
+
+
+
+
