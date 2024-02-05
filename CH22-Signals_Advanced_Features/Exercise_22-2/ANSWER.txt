@@ -1,0 +1,14 @@
+When we run the code the output would be like
+
+```
+$ ./real_vs_standard
+A mix of real-time and standard signals are blocked
+Caught realtime signal 37 (Real-time signal 3)
+Caught realtime signal 35 (Real-time signal 1)
+Caugh standard signal 18 (Continued)
+Caugh standard signal 2 (Interrupt)
+Signals are unblocked
+
+```
+
+This means Linux gives priority for real-time signals.

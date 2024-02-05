@@ -1,0 +1,6 @@
+Section 22.2 noted that if as stopped process that has established a handler for and
+blocked SIGCONT is later resumed as a consequence of receiving a SIGCONT, then the
+handler is invoked only when SIGCONT is unblocked. Write a program to verify this.
+Recall that a process can be stopped by typing the terminal suspend character 
+(usually Control-Z) and can be sent a SIGCONT signal using the command kill -CONT 
+(or implicitly, using the shell fg command).

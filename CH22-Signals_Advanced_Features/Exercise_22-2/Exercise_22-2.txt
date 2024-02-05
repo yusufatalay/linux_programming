@@ -1,0 +1,4 @@
+If both a realtime and a standard signal are pending for a process, SUSv3 leaves it
+unspecified which is delivered first. Write a program that shows what Linux does in
+this case. (Have the program set up a handler for all signals, block signals for a
+period of time so that you can send vairous signals to it, and then unblock all signals.)

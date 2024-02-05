@@ -1,0 +1,12 @@
+When we run the following code the output would be like
+
+
+```
+$ ./sigcont
+SIGCONT is now blocked
+^Zfish: Job 1, './sigcont' has stopped
+$ fg
+Send job 1 (./sigcont) to foreground
+SIGCONT IS HANDLED
+SIGCONT is now unblocked
+```

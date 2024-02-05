@@ -1,0 +1,17 @@
+When we run sig_speed_sigsuspend with 1 million signals the time it takes shown below
+
+```
+$ time ./sig_speed_sigsuspend 1000000
+
+________________________________________________________
+Executed in   15.17 secs    fish           external
+   usr time    2.75 secs    0.00 micros    2.75 secs
+   sys time    4.77 secs  927.00 micros    4.77 secs
+	
+```
+
+When we run sig_speed_sigwaitinfo with 1 million signals the program does not exit, which is weird because 
+after failing to run it I checked the solution and it was the same as mine. The book's solution also says I should see 
+%40 or %50 improvement in performance. But again the program does not exit.  
+
+``` 
