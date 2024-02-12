@@ -1,0 +1,2 @@
+Modify the program in Listing 23-5(ptmr_sigev_signal.c) to use sigwaitinfo
+instead of a signal handler.

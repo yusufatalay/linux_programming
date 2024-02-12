@@ -1,0 +1,2 @@
+Although alarm() is implemented as a system call withing the Linux kernel,
+this is redundant. Implement alarm() using setitimer().
