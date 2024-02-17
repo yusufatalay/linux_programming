@@ -1,0 +1,3 @@
+Suppose taht in the program in Listing 24-6, the child process also needed to
+wait on the parent to complete some actions. What changes to the program would 
+be reuqired in order to enforce this?

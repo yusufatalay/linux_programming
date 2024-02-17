@@ -1,0 +1,3 @@
+We can create child process at given point and send SIGABRT to that child 
+process, since the child process is exact replica of the parent process,
+the coredump would enough to represent parent process.

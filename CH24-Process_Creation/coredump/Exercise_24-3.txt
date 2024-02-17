@@ -1,0 +1,3 @@
+Assuming that we can modify the program source code, how could we get a core 
+dump of a process at a given point in the program, while letting the process 
+continue execution?

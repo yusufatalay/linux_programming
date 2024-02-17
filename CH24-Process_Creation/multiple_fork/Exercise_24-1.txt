@@ -1,0 +1,5 @@
+After a program executes the following series of fork() calls, how many new processes will result (assuming that each fork() call is successful)?
+
+	fork();
+	fork();
+	fork();

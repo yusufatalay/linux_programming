@@ -1,0 +1,8 @@
+3 consecutive fork() calls made.
+
+	fork(); // original process  craetes a child process -- 2 processes
+	fork(); // original process and child process creates a child process each -- 4 processes
+	fork(); // original process and child process creates a child process each -- 8 processes
+
+	// So, total 8 processes are created. we can say that if n (consecutive and conditioneless) fork() calls are made, 2^n processes are created.
+	
