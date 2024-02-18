@@ -1,0 +1,3 @@
+If a child process makes the call exit(-1), what exit status 
+will be seen by the parent?
+

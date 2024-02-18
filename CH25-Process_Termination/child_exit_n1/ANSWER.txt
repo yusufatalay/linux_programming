@@ -1,0 +1,13 @@
+When we run the supplemented code here is the output
+
+$ ./child_exit_n1
+Child with pid : 13684 about to exit with -1 status
+Child exited with 65280
+Child exited with 255
+
+The reason that 65280 is printed is because the child process exited with -1 status and the shell interprets it as 255.
+The reason for this is that the exit status is stored in the lower 8 bits of the status variable and the shell interprets
+the exit status as a signed 8 bit integer.
+So when the child process exits with -1 status, the status variable will have 0xFFFFFF00 and the shell interprets it as 255.
+
+We can use WEXITSTATUS macro to see the actual exit status of the child process.
