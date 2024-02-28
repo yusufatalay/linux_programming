@@ -1,0 +1,6 @@
+Suppose that we have three processes related as grandparent, parent and child,
+and that the grandparent doesn't immediately perform a wait() after the parent
+exits, so that the parent becomes a zombie. When do you expect the granchild to
+be adopted by init (so that getppid() in the grandchild returns 1): after the parent
+terminates or after the grandparent does a wait()? Write a program to verify your
+answer.

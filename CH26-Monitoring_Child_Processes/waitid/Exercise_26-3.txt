@@ -1,0 +1,2 @@
+Replace the use of waitpid() with waitid() in Listing 26-3 (child-status.c). The call to
+printWaitStatus() will need to be replaced by code that prints relevant fields form the siginfo_t structure returned by waitid().

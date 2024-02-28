@@ -1,0 +1,1 @@
+Wrtie a program to verify taht when a child's parent terminates, a call to getppid() returns 1 (the value of the process ID of the init process).

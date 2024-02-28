@@ -1,0 +1,5 @@
+Listing 26-4 (make_zombie.c) usees a call to sleep() to allow the child process
+a chance to execute and terminate before the parent executes system().
+This approach produces a theoretical race condition. 
+Modify the program to eliminate the race condition by using signals to 
+synchronize the parent and child.

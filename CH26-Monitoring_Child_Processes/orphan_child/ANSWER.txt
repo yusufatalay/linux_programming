@@ -1,0 +1,8 @@
+When I run the code I get the following output which is quite interesting
+
+ ~/D/t/l/C/orphan_child (main|✔) [1]$ ./orphan_child
+Child executing current PPID (parent alive) = 6192
+Parent executing current PID = 6192 . I am about to die
+~/D/t/l/C/orphan_child (main|✔) [1]$ Parent dead, new parent pid is 824
+
+the PID 824 is systemd's PID on my system, it makes sense now (systemd is second child of init)

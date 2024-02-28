@@ -1,0 +1,25 @@
+When I run that code (without wait in grandparent) I get the following output:
+
+Grandparent here with PID = 4782
+Parent here with PID = 4783 about to exit
+Child is here with PID = 0
+Parent still alive
+Parent still alive
+Parent still alive
+Parent still alive
+Parent still alive
+Parent still alive
+Parent still alive
+Parent gone new parent's PID = 813
+Parent here with PID = 4783 about to exit
+
+When we add the wait in the grandparent, we get the following output:
+
+.~/D/t/l/C/zombie_parent (main|✔) $/zombie_parent
+Grandparent here with PID = 5184
+Parent here with PID = 5185 about to exit
+~/D/t/l/C/zombie_parent (main|✔) $ Child is here with PID = 0
+Parent gone new parent's PID = 813
+Parent here with PID = 5185 about to exit
+
+I think it is safe to assume that child get adopted by init process when parent dies. 
