@@ -1,0 +1,5 @@
+Suppose that a parent process has established a handler for SIGCHLD and also
+blocked this signal. Subsequently, one of its children exits, and the parent then
+does a wait() to collect the child's status.
+What happens when the parent unblocks SIGCHLD? Write a program to verify your answer.
+What is the relevance of the result for a program calling the system() function?

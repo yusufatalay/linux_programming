@@ -1,0 +1,4 @@
+Is it because the stdout is buffered and the printf() in the provided program does not include any new line characters,
+or the program calls fflush() before calling exec(). Therfore the message is located at the stdout's buffer and not printed
+because buffer is not full yet, on top of that the program's text and data is replaced by sleep process therefore the message
+will not be printed ever.

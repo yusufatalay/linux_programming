@@ -1,0 +1,3 @@
+It might be useful if we want the init system to handle resource management of the 
+grandchild resources. Therefore we as parent process don't need to wait for the 
+grandchildren.

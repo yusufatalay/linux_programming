@@ -1,0 +1,8 @@
+When we run the following program, we fint it produces no output, Why is this?
+
+int main(int argc, char *argv[]){
+	printf("Hello world");
+	execlp("sleep", "sleep", "0", (char *)NULL);
+}
+
+

@@ -1,0 +1,4 @@
+The first xyz file under dir1 has no permission for execution (EACCESS),
+execlp will continue searching PATH because of this. Finally the xyz under
+the dir2 will be executed
+

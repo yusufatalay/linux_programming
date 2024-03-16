@@ -1,0 +1,5 @@
+Use execve() to implement execlp(). You will need to use the stdarg(3) API to handle
+the variable-lenght argument list supplied to execlp(). You will also need to use
+functions in the malloc package to allocate space for the argument and environment 
+vectors. Finally, note that an easy way of checking whether a file exists in a particular
+directory and is executable is simply to try execing the file.

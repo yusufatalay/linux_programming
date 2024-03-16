@@ -1,0 +1,8 @@
+When we run the code the output would be like the following
+ $ ./Exercise_27-3
+     1	#!/bin/cat -n
+     2	Hello world
+
+Reason for that is:
+Shebang points to the cat program which prints out the supplied file, the -n arg is for
+enabling line numbers. In short the file is interpreted by cat program with -n flag

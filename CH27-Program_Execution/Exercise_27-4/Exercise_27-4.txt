@@ -1,0 +1,25 @@
+What is the effect of the following code? In what circumstances might it be useful?
+
+	childPid = fork();
+	if (childPid == -1){
+		errExit("fork1");
+	}
+	if (childPid == 0){
+		switch(fork()){
+			caase -1:
+				errExit("fork2");
+			case 0:						// Grandchild
+				/*----------Do real work here-----------*/
+				exit(EXIT_SUCCESS)
+			default:
+				exit(EXIT_SUCCESS);		// Make grandchild an orphan
+		}
+
+		// Parent falls through to here
+
+		if (waitpid(childPid, &status, 0) == -1) {
+			errExit("waitpid");
+		}
+
+		// Parent carries on to do other things
+	}
