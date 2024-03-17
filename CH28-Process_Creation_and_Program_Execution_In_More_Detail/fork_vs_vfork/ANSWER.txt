@@ -1,0 +1,19 @@
+Output for fork_benchmark (with 100000 processes created)
+
+time ./fork_benchmark
+
+________________________________________________________
+Executed in   17.72 secs    fish           external
+   usr time   10.51 secs    0.00 micros   10.51 secs
+   sys time    7.23 secs  887.00 micros    7.23 secs
+
+------------------------------------------
+
+Output for vfork_benchmark (with 100000 processes created)
+
+time ./vfork_benchmark
+
+________________________________________________________
+Executed in    2.30 secs    fish           external
+   usr time    1.00 secs  637.00 micros    1.00 secs
+   sys time    1.50 secs    0.00 micros    1.50 secs
