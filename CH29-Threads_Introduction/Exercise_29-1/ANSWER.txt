@@ -1,0 +1,5 @@
+Reading man page of pthread_join and I can say that this is EDEADLK situation.
+
+
+To prevent this from happenning we can use pthread_equal(pthread_self(), tid)
+to see if those two thread descriptors are the same.

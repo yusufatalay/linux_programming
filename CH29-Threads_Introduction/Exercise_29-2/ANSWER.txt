@@ -1,0 +1,2 @@
+The someStruct buf is defined on main thread's stack, and after it exits with pthread_exit, the threadFunc continues to operate in that memory field, that might be a problem, if some other newly craeted
+thread operates on that previously owned field.
