@@ -1,0 +1,22 @@
+I have implemented the code here is the part of the output
+
+```
+Thread 1: Current value of glob is 82
+Thread 1: Current value of glob is 83
+Thread 1: Current value of glob is 84
+Thread 1: Current value of glob is 85
+Thread 1: Current value of glob is 86
+Thread 1: Current value of glob is 87
+Thread 2: Current value of glob is 85
+Thread 1: Current value of glob is 88
+Thread 2: Current value of glob is 89
+Thread 1: Current value of glob is 90
+Thread 1: Current value of glob is 91
+Thread 1: Current value of glob is 92
+Thread 1: Current value of glob is 93
+Thread 1: Current value of glob is 94
+```
+		
+
+From glob=0 to 87 thread 1 was running then kernel switched to thread 2 and the value that thread was reading was 85.
+This happened because of race condition.
