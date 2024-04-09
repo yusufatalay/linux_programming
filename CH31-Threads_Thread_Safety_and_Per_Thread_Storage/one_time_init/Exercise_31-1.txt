@@ -1,0 +1,9 @@
+Implement a function, one_time_init(control, init), that performs the equivalent of
+pthread_once(). The control argument should be a pointer to a statically allocated
+structure containint a Boolean variable and a mutex. The Boolean variable
+indicates whether the function init has already been called, and the mutex controls
+access to that variable. To keep implementation simple, you can ignore
+possibilities such as init() failing or being cancelled when first called from a thread
+(i.e, it is not necessary to devise a scheme whereby, if such an event occurs, the
+next thread that calls one_time_init() reattempts the call to init()).
+

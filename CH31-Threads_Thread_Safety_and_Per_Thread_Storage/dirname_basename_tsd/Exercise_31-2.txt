@@ -1,0 +1,2 @@
+Use thread-spesific data to write thread-safe versions of dirname() and basename()
+(Section 18.14).
