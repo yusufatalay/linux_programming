@@ -1,0 +1,1 @@
+Since SIGCHLD is not a thread-spesific signal, it will be delivered to any thread that parent process encompasses.

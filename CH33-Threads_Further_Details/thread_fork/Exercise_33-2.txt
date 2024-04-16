@@ -1,0 +1,3 @@
+Suppose that a thread creates a child using fork(). When the child terminates, is it
+guaranteed that the resulting SIGCHLD signal will be delivered to the thread that
+called fork() (as opposed to some other thread in the process)?	
