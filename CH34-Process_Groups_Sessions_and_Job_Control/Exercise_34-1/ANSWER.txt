@@ -1,0 +1,6 @@
+Unhandler SIGUSR1 will terminate the process that is sended to, in a pipeline,
+this signal will terminate every process in the pipeline since they are in the
+same process group.
+Moving group of child (that desired to be signaled) to a new process group would
+mitigate this problem.
+

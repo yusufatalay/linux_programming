@@ -1,0 +1,4 @@
+Modify the program in Listing 34-4 (disc_SIGHUP.c) to verify that, if the controlling
+process doesn't terminate as a consequence of receiving SIGHUP (i.e, it instead
+ignores or catches the signal and continues execution), then the kernel doesn't
+send SIGHUP to the members of the foreground process group.

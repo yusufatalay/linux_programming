@@ -1,0 +1,3 @@
+If we're to move unblocking code before setting it to the default disposition, then 
+when the signal caught the handler would invoke twice, and since printf function is not
+async-signal-safe this situation may cause a race condition.

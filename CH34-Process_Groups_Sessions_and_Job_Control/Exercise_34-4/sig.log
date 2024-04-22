@@ -1,0 +1,9 @@
+// After modification
+PID of parent process is:       9803
+Foreground process group ID is: 9803
+PID=11454 PGID=11454
+PID=9803 PGID=9803
+PID=11455 PGID=9803
+PID=11456 PGID=9803
+PID 9803: caught signal  1 (Hangup)
+PID 9803: caught signal  1 (Hangup)

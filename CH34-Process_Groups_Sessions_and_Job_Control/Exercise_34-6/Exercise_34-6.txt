@@ -1,0 +1,2 @@
+Write a program to verify that when a process in an orphaned process group
+attempts to read() from the controlling terminal, the read() fails with the error EIO.

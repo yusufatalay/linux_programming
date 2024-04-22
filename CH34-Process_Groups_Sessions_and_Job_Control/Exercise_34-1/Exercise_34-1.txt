@@ -1,0 +1,12 @@
+Suppose a parent process performs the following steps:
+
+	// Call fork() to create a number of child processes, each of which
+	// remains in same process group as the parent
+
+	// Sometime later...
+	signal(SIGURS1, SIG_IGN);	// Parent makes itself ummune to SIGUSR1
+
+	killpg(getpgrp(), SIGUSR1);	// Send signal to children created earlier
+
+What problem might be encountered with this application design? (Consider shell
+pipelines.) How could this problem be avoided?

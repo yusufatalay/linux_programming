@@ -1,0 +1,3 @@
+Suppose that, in the signal handler of Listing 34-6, the code that unblocks the
+SIGTSTP signal was moved to the start of the handler. What potential race condition
+does this create?

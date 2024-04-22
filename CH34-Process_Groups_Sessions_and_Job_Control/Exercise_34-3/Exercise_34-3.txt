@@ -1,0 +1,1 @@
+Write a program to verify that a call to setsid() from a process group leader fails.

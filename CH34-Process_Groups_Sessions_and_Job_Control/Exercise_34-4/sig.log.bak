@@ -1,0 +1,9 @@
+// Before modification
+PID of parent process is:       6834
+Foreground process group ID is: 6834
+PID=6834 PGID=6834
+PID=9773 PGID=9773
+PID=9774 PGID=6834
+PID=9775 PGID=6834
+PID 9774: caught signal  1 (Hangup)
+PID 9775: caught signal  1 (Hangup)

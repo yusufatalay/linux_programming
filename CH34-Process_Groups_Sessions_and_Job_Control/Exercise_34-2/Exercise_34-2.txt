@@ -1,0 +1,2 @@
+Write a program to verify that a parent process can change the process group ID of
+one of its children before the child performs an exec(), but not afterwards.
