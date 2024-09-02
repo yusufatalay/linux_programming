@@ -1,0 +1,8 @@
+Write a set-user-ID-root program that is the realtime scheduling analog of nice(1).
+The command-line interface of this program should be as follows:
+
+	# ./rtsched policy priority command arg...
+
+In the above command, policy is r for SCHED_RR or f for SCHED_FIFO. This program
+should drop its privileged ID before execing the command, for the reasons
+described in Sections 9.7.1 and 38.3.
