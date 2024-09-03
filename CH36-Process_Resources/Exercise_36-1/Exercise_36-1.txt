@@ -1,0 +1,4 @@
+Write a program that shows that the getrusage() RUSAGE_CHILDREN flag retrieves
+information about only the children for which a wait() call has been performed.
+(Have the program create a child process that consumes some CPU time, and then
+have the parent call getrusage() before and after calling wait().)

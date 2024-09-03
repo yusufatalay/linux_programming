@@ -1,0 +1,5 @@
+Write a program that executes a command and then displays its resource usage.
+This is analogous to the time(1) command does. Thus, we would use this 
+program as follows:
+
+./rusage command arg...
