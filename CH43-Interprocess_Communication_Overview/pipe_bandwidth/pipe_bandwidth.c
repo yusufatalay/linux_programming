@@ -102,9 +102,11 @@ void start_clock()
 void end_clock(long int totalSize)
 {
 	en_time = times(&en_cpu);
+	long ticks_per_second = sysconf(_SC_CLK_TCK);
+	double elapsed_time = (double)(en_time - st_time) / ticks_per_second;
 
-	printf("Total Time: %jd, Total Data Transferred: %ld\nBits per Second: %ld\n",
-	       (intmax_t)(en_time - st_time),
+	printf("Total Time: %.2f seconds, Total Data Transferred: %ld bytes\nBits per Second: %.2f bps\n",
+	       elapsed_time,
 	       totalSize,
-	       totalSize / (en_time - st_time));
+	       (totalSize * 8) / elapsed_time);
 }
