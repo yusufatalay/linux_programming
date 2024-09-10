@@ -1,0 +1,7 @@
+Write a program that measures the bandwidth provided by pipes.
+As command-line arguments, the program should accept the number of data blocks
+to be sent and the size of each data block. After creating a pipe, the program
+splits into two process; a child that writes the data blocks to the pipe as fast
+as possible, and a parent that reads the data blocks. After all data has been
+read, the parent should print elapsed time required and the bandwidth(bps).
+Measure the bandwidth for different data block sizes.
