@@ -1,5 +1,4 @@
 NOTE: Skipped chapters:
-* 14 (File Systems)
 * 15 (File Attributes)
 * 17 (Extended Attributes)
 * 18 (Directories and Links)
