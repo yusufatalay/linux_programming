@@ -9,6 +9,7 @@
 
 static void fifo_sig_handler(int signum){
   write(STDOUT_FILENO, "SIGNALLED\n", 10);
+  remove(SERVER_FIFO);
   exit(-1);
 }
 int main(void) {
