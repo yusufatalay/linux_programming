@@ -1,0 +1,2 @@
+Verify the effect of the RLIMIT_MEMLOCK resource limit by writing a program that sets a
+value for this limit and then attempts to lock more memory than the limit
