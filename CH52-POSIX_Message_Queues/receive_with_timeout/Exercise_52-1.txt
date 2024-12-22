@@ -1,0 +1,2 @@
+Modify the program in Listing 52-5 (pmsg_receive.c) to accept a timeout (a relative
+number of seconds) on the command line, and use mq_timedreceive() instead of mq_receive().

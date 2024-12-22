@@ -1,0 +1,2 @@
+Write a simple chat program (similar to talk(1), but without the curses interface)
+using POSIX message queues.

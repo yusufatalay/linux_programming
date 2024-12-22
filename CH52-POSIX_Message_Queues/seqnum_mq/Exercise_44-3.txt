@@ -1,0 +1,9 @@
+The server in Listing 44-7 (fifo_seqnum_server.c) always starts assignign sequence
+numbers from 0 each time it is started. Modify the program to use a backup file
+that is updated each time a sequence number is assigned. (The open() O_SYNC flag,
+described in Section 4.3.1, may be useful.) At startup, the program should check
+for the existence of this file, and if it is present, use the value it contains 
+to initialize the sequence number. If the backup file can't be found on startup,
+the program should create a new file and start assigning sequence nubmers beginning at 0.
+(An alternative to this technique would be to use memory-mapped files, described in CH49)
+
