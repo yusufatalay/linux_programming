@@ -1,0 +1,4 @@
+Modify the program in Listing 53-3 (psem_wait.c) to use sem_timedwait() instead
+of  sem_wait. The program should take an additional command-line argument taht
+specifies a (relative) number of seconds to be used as the timeout for the 
+sem_timedwait() call.
