@@ -1,0 +1,2 @@
+Write a program to determine whether flock() detects deadlock situations when
+beign used to lock two different files in two processes
