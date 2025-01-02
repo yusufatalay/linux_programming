@@ -1,0 +1,4 @@
+In Section 57.3, we noted that UNIX domain datagram sockets are reliable.
+Write programs to show that if a sender transmits datagrams to a UNIX domain
+datagram socket faster than the receiver reads them, then the sender is eventually
+blocked, and remains blocked until the receiver reads some of the pending datagrams.
